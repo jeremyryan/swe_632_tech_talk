@@ -4,6 +4,12 @@
     <title>SWE 632 - Pure CSS Tech Talk</title>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
     <link rel="stylesheet" href="css/techtalk.css">
 </head>
 <body>
@@ -15,6 +21,7 @@
             <ul class="pure-menu pure-menu-horizontal">
                 <li class="pure-menu-item pure-menu-selected"><a id="grid-5ths-tab" class="pure-menu-link">5ths-Based Grid</a></li>
                 <li class="pure-menu-item"><a id="grid-24ths-tab" class="pure-menu-link">24ths-Based Grid</a></li>
+                <li class="pure-menu-item"><a id="grid-responsive-tab" class="pure-menu-link">Responsive Grid</a></li>
             </ul>
         </div>
         <div id="grid-5ths">
@@ -53,6 +60,18 @@
                 <div class="pure-u-4-24 coral grid-section">4 x 24</div>
                 <div class="pure-u-8-24 cornflower-blue grid-section">8 x 24</div>
                 <div class="pure-u-10-24 pale-violet-red grid-section">10 x 24</div>
+            </div>
+        </div>
+
+        <div id="grid-responsive" style="display: none">
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 pale-violet-red grid-section"></div>
+                <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 medium-turqoise grid-section"></div>
+                <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 coral grid-section"></div>
+                <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 cornflower-blue grid-section"></div>
+                <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 medium-purple grid-section"></div>
+                <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 pale-violet-red grid-section"></div>
+                <div class="pure-u-1 pure-u-lg-1-3 medium-turqoise grid-section"></div>
             </div>
         </div>
     </div>

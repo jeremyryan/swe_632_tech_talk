@@ -17,12 +17,16 @@ $(function() {
         console.log($link.attr('id'));
         switch ($link.attr('id')) {
             case 'grid-5ths-tab':
+                $('#grid-24ths, #grid-responsive').hide();
                 $('#grid-5ths').show();
-                $('#grid-24ths').hide();
                 break;
             case 'grid-24ths-tab':
-                $('#grid-5ths').hide();
+                $('#grid-5ths, #grid-responsive').hide();
                 $('#grid-24ths').show();
+                break;
+            case 'grid-responsive-tab':
+                $('#grid-5ths, #grid-24ths').hide();
+                $('#grid-responsive').show();
                 break;
         }
     });
