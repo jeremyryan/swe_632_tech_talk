@@ -1,3 +1,17 @@
-a {
+a, label {
     cursor: pointer;
+}
+
+body {
+    width: 50%;
+    margin-left: 15%;
+    margin-bottom: 100px;
+}
+
+.pure-menu {
+    overflow: visible;
+}
+
+#menu .pure-menu-item {
+    max-width: 200px;
 }

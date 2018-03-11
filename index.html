@@ -8,12 +8,14 @@
 </head>
 <body>
     <h1>Pure CSS</h1>
+
     <div>
         <h2>Grids</h2>
         <div>
 
         </div>
     </div>
+
     <div id="forms">
         <h2>Forms</h2>
         <div class="pure-menu pure-menu-horizontal">
@@ -40,22 +42,97 @@
             </fieldset>
         </form>
     </div>
-    <div>
+
+    <div id="buttons">
         <h2>Buttons</h2>
+        <div class="pure-menu pure-menu-horizontal">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a id="default-button-tab" class="pure-menu-link">Default Button</a></li>
+                <li class="pure-menu-item"><a id="disabled-button-tab" class="pure-menu-link">Disabled Button</a></li>
+                <li class="pure-menu-item"><a id="active-button-tab" class="pure-menu-link">Active Button</a></li>
+                <li class="pure-menu-item"><a id="primary-button-tab" class="pure-menu-link">Primary Button</a></li>
+                <li class="pure-menu-item">
+                </li>
+            </ul>
+        </div>
         <div>
-
+            <label>
+                <input id="toggle-button-group" type="checkbox">
+                Grouped Buttons
+            </label>
+        </div>
+        <div id="button-group">
+            <button class="pure-button" id="button-1">Button 1</button>
+            <button class="pure-button" id="button-2">Button 2</button>
+            <button class="pure-button" id="button-3">Button 3</button>
         </div>
     </div>
-    <div>
+
+    <div id="tables">
         <h2>Tables</h2>
+        <div class="pure-menu pure-menu-horizontal">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a id="default-table-tab" class="pure-menu-link">Default Table</a></li>
+                <li class="pure-menu-item"><a id="bordered-table-tab" class="pure-menu-link">Bordered Table</a></li>
+                <li class="pure-menu-item"><a id="horizontal-table-tab" class="pure-menu-link">Horizontal Bordered Tabled</a></li>
+                <li class="pure-menu-item"><a id="striped-table-tab" class="pure-menu-link">Striped Table</a></li>
+            </ul>
+        </div>
         <div>
-
+            <table class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                        <th>Header 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Cell 1 </td>
+                        <td> Cell 2 </td>
+                        <td> Cell 3 </td>
+                    </tr>
+                    <tr>
+                        <td> Cell 1 </td>
+                        <td> Cell 2 </td>
+                        <td> Cell 3 </td>
+                    </tr>
+                    <tr>
+                        <td> Cell 1 </td>
+                        <td> Cell 2 </td>
+                        <td> Cell 3 </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    <div>
+    <div id="menus">
         <h2>Menus</h2>
-        <div>
+        <div class="pure-menu pure-menu-horizontal">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a id="vertical-menu-tab" class="pure-menu-link">Vertical Menu</a></li>
+                <li class="pure-menu-item"><a id="horizontal-menu-tab" class="pure-menu-link">Horizontal Menu</a></li>
+            </ul>
+        </div>
 
+        <div class="pure-menu" id="menu">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-heading">Heading 1</li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Item 1</a></li>
+                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                    <a href="#" class="pure-menu-link">Item 2</a>
+                    <ul class="pure-menu-children">
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Submenu Item 1</a></li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Submenu Item 2</a></li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Submenu Item 3</a></li>
+                    </ul>
+                </li>
+                <li class="pure-menu-heading">Heading 2</li>
+                <li class="pure-menu-item pure-menu-disabled"><a href="#" class="pure-menu-link">Item 3</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Item 4</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Item 5</a></li>
+            </ul>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
