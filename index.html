@@ -7,12 +7,53 @@
     <link rel="stylesheet" href="css/techtalk.css">
 </head>
 <body>
-    <h1>Pure CSS</h1>
+    <h1>SWE 632 - Pure CSS Tech Talk</h1>
 
-    <div>
+    <div id="grids">
         <h2>Grids</h2>
         <div>
+            <ul class="pure-menu pure-menu-horizontal">
+                <li class="pure-menu-item pure-menu-selected"><a id="grid-5ths-tab" class="pure-menu-link">5ths-Based Grid</a></li>
+                <li class="pure-menu-item"><a id="grid-24ths-tab" class="pure-menu-link">24ths-Based Grid</a></li>
+            </ul>
+        </div>
+        <div id="grid-5ths">
+            <div class="pure-g">
+                <div class="pure-u-1-5 pale-violet-red grid-section">1 x 5</div>
+                <div class="pure-u-1-5 medium-turqoise grid-section">1 x 5</div>
+                <div class="pure-u-1-5 coral grid-section">1 x 5</div>
+                <div class="pure-u-1-5 medium-purple grid-section">1 x 5</div>
+                <div class="pure-u-1-5 cornflower-blue grid-section">1 x 5</div>
+            </div>
+            <div class="pure-g" >
+                <div class="pure-u-2-5 coral grid-section">2 x 5</div>
+                <div class="pure-u-1-5 cornflower-blue grid-section">1 x 5</div>
+                <div class="pure-u-2-5 medium-turqoise grid-section">2 x 5</div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-2-5 medium-turqoise grid-section">2 x 5</div>
+                <div class="pure-u-3-5 medium-purple grid-section">3 x 5</div>
+            </div>
+        </div>
 
+        <div id="grid-24ths" style="display: none">
+            <div class="pure-g">
+                <div class="pure-u-4-24 pale-violet-red grid-section">4 x 24</div>
+                <div class="pure-u-14-24 medium-turqoise grid-section">14 x 24</div>
+                <div class="pure-u-6-24 cornflower-blue grid-section">6 x 24</div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-6-24 medium-purple grid-section">6 x 24</div>
+                <div class="pure-u-6-24 pale-violet-red grid-section">6 x 24</div>
+                <div class="pure-u-6-24 cornflower-blue grid-section">6 x 24</div>
+                <div class="pure-u-6-24 coral grid-section">6 x 24</div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-2-24 medium-turqoise grid-section">2 x 24</div>
+                <div class="pure-u-4-24 coral grid-section">4 x 24</div>
+                <div class="pure-u-8-24 cornflower-blue grid-section">8 x 24</div>
+                <div class="pure-u-10-24 pale-violet-red grid-section">10 x 24</div>
+            </div>
         </div>
     </div>
 
@@ -20,7 +61,7 @@
         <h2>Forms</h2>
         <div class="pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a id="default-form-tab" class="pure-menu-link">Default Form</a></li>
+                <li class="pure-menu-item pure-menu-selected"><a id="default-form-tab" class="pure-menu-link">Default Form</a></li>
                 <li class="pure-menu-item"><a id="stacked-form-tab" class="pure-menu-link">Stacked Form</a></li>
                 <li class="pure-menu-item"><a id="aligned-form-tab" class="pure-menu-link">Aligned Form</a></li>
             </ul>
@@ -45,16 +86,6 @@
 
     <div id="buttons">
         <h2>Buttons</h2>
-        <div class="pure-menu pure-menu-horizontal">
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a id="default-button-tab" class="pure-menu-link">Default Button</a></li>
-                <li class="pure-menu-item"><a id="disabled-button-tab" class="pure-menu-link">Disabled Button</a></li>
-                <li class="pure-menu-item"><a id="active-button-tab" class="pure-menu-link">Active Button</a></li>
-                <li class="pure-menu-item"><a id="primary-button-tab" class="pure-menu-link">Primary Button</a></li>
-                <li class="pure-menu-item">
-                </li>
-            </ul>
-        </div>
         <div>
             <label>
                 <input id="toggle-button-group" type="checkbox">
@@ -62,9 +93,10 @@
             </label>
         </div>
         <div id="button-group">
-            <button class="pure-button" id="button-1">Button 1</button>
-            <button class="pure-button" id="button-2">Button 2</button>
-            <button class="pure-button" id="button-3">Button 3</button>
+            <button class="pure-button pure-button-primary" id="primary-button">Primary Button</button>
+            <button class="pure-button pure-button-active" id="active-button">Active</button>
+            <button class="pure-button pure-button-disabled" id="disabled-button">Disabled Button</button>
+            <button class="pure-button" id="defualt-button">Default</button>
         </div>
     </div>
 
@@ -72,7 +104,7 @@
         <h2>Tables</h2>
         <div class="pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a id="default-table-tab" class="pure-menu-link">Default Table</a></li>
+                <li class="pure-menu-item pure-menu-selected"><a id="default-table-tab" class="pure-menu-link">Default Table</a></li>
                 <li class="pure-menu-item"><a id="bordered-table-tab" class="pure-menu-link">Bordered Table</a></li>
                 <li class="pure-menu-item"><a id="horizontal-table-tab" class="pure-menu-link">Horizontal Bordered Tabled</a></li>
                 <li class="pure-menu-item"><a id="striped-table-tab" class="pure-menu-link">Striped Table</a></li>
@@ -107,11 +139,12 @@
             </table>
         </div>
     </div>
+
     <div id="menus">
         <h2>Menus</h2>
-        <div class="pure-menu pure-menu-horizontal">
+        <div id="menu-select" class="pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a id="vertical-menu-tab" class="pure-menu-link">Vertical Menu</a></li>
+                <li class="pure-menu-item pure-menu-selected"><a id="vertical-menu-tab" class="pure-menu-link">Vertical Menu</a></li>
                 <li class="pure-menu-item"><a id="horizontal-menu-tab" class="pure-menu-link">Horizontal Menu</a></li>
             </ul>
         </div>

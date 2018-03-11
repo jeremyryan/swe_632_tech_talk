@@ -15,3 +15,83 @@ body {
 #menu .pure-menu-item {
     max-width: 200px;
 }
+
+.grid-section {
+    text-align: center;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.honeydew {
+    background-color: honeydew;
+}
+
+.snow {
+    background-color: snow;
+}
+
+.mintcream {
+    background-color: mintcream;
+}
+
+.azure {
+    background-color: azure;
+}
+
+.ivory {
+    background-color: ivory;
+}
+
+.plum {
+    background-color: plum;
+}
+
+.medium-aquamarine {
+    background-color: mediumaquamarine;
+}
+
+.coral {
+    background-color: coral;
+}
+
+.medium-turqoise {
+    background-color: mediumturquoise;
+}
+
+.cornflower-blue {
+    background-color: cornflowerblue;
+}
+
+.medium-purple {
+    background-color: mediumpurple;
+}
+
+.pale-violet-red {
+    background-color: palevioletred;
+}
+
+.pure-g {
+    margin-bottom: 5px;
+}
