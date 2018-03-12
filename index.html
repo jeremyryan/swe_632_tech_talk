@@ -20,12 +20,18 @@
         <hr>
         <div>
             <ul class="pure-menu pure-menu-horizontal">
-                <li class="pure-menu-item pure-menu-selected"><a id="grid-5ths-tab" class="pure-menu-link">5ths-Based Grid</a></li>
-                <li class="pure-menu-item"><a id="grid-24ths-tab" class="pure-menu-link">24ths-Based Grid</a></li>
-                <li class="pure-menu-item"><a id="grid-responsive-tab" class="pure-menu-link">Responsive Grid</a></li>
+                <li class="pure-menu-item" v-bind:class="{ 'pure-menu-selected': grid5ths }">
+                    <a id="grid-5ths-tab" class="pure-menu-link" v-on:click="tabClick">5ths-Based Grid</a>
+                </li>
+                <li class="pure-menu-item" v-bind:class="{ 'pure-menu-selected': grid24ths }">
+                    <a id="grid-24ths-tab" class="pure-menu-link" v-on:click="tabClick">24ths-Based Grid</a>
+                </li>
+                <li class="pure-menu-item" v-bind:class="{ 'pure-menu-selected': gridResponsive }">
+                    <a id="grid-responsive-tab" class="pure-menu-link" v-on:click="tabClick">Responsive Grid</a>
+                </li>
             </ul>
         </div>
-        <div id="grid-5ths">
+        <div id="grid-5ths" v-show="grid5ths">
             <div class="pure-g">
                 <div class="pure-u-1-5 pale-violet-red grid-section">1 x 5</div>
                 <div class="pure-u-1-5 medium-turqoise grid-section">1 x 5</div>
@@ -44,7 +50,7 @@
             </div>
         </div>
 
-        <div id="grid-24ths" style="display: none">
+        <div id="grid-24ths" v-show="grid24ths">
             <div class="pure-g">
                 <div class="pure-u-4-24 pale-violet-red grid-section">4 x 24</div>
                 <div class="pure-u-14-24 medium-turqoise grid-section">14 x 24</div>
@@ -64,7 +70,7 @@
             </div>
         </div>
 
-        <div id="grid-responsive" style="display: none">
+        <div id="grid-responsive" v-show="gridResponsive">
             <div class="pure-g">
                 <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 pale-violet-red grid-section"></div>
                 <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4 medium-turqoise grid-section"></div>
@@ -84,12 +90,18 @@
                <h3>Layouts</h3>
                <div class="pure-menu pure-menu-horizontal">
                    <ul class="pure-menu-list">
-                       <li class="pure-menu-item pure-menu-selected"><a id="default-form-tab" class="pure-menu-link">Default Form</a></li>
-                       <li class="pure-menu-item"><a id="stacked-form-tab" class="pure-menu-link">Stacked Form</a></li>
-                       <li class="pure-menu-item"><a id="aligned-form-tab" class="pure-menu-link">Aligned Form</a></li>
+                       <li class="pure-menu-item" v-bind:class="{ 'pure-menu-selected': ! (stacked || aligned) }">
+                           <a id="default-form-tab" class="pure-menu-link" v-on:click="tabClick">Default Form</a>
+                       </li>
+                       <li class="pure-menu-item" v-bind:class="{ 'pure-menu-selected': stacked }">
+                           <a id="stacked-form-tab" class="pure-menu-link" v-on:click="tabClick">Stacked Form</a>
+                       </li>
+                       <li class="pure-menu-item" v-bind:class="{ 'pure-menu-selected': aligned }">
+                           <a id="aligned-form-tab" class="pure-menu-link" v-on:click="tabClick">Aligned Form</a>
+                       </li>
                    </ul>
                </div>
-               <form id="form-demo" class="pure-form">
+               <form id="form-demo" class="pure-form" v-bind:class="{ 'pure-form-stacked': stacked, 'pure-form-aligned': aligned }">
                    <fieldset>
                        <div class="pure-control-group">
                            <label for="username">Username</label>
@@ -147,15 +159,15 @@
         <hr>
         <div>
             <label>
-                <input id="toggle-button-group" type="checkbox">
+                <input id="toggle-button-group" type="checkbox" v-on:click="grouped = ! grouped">
                 Grouped Buttons
             </label>
         </div>
-        <div id="button-group">
+        <div id="button-group" v-bind:class="{ 'pure-button-group': grouped }">
+            <button class="pure-button" id="default-button">Default</button>
             <button class="pure-button pure-button-primary" id="primary-button">Primary Button</button>
             <button class="pure-button pure-button-active" id="active-button">Active</button>
             <button class="pure-button pure-button-disabled" id="disabled-button">Disabled Button</button>
-            <button class="pure-button" id="defualt-button">Default</button>
         </div>
     </div>
 
@@ -164,14 +176,22 @@
         <hr>
         <div class="pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
-                <li class="pure-menu-item pure-menu-selected"><a id="default-table-tab" class="pure-menu-link">Default Table</a></li>
-                <li class="pure-menu-item"><a id="bordered-table-tab" class="pure-menu-link">Bordered Table</a></li>
-                <li class="pure-menu-item"><a id="horizontal-table-tab" class="pure-menu-link">Horizontal Bordered Tabled</a></li>
-                <li class="pure-menu-item"><a id="striped-table-tab" class="pure-menu-link">Striped Table</a></li>
+                <li class="pure-menu-item" v-bind:class="{ 'pure-menu-selected': ! (bordered || horizontal || striped) }">
+                    <a id="default-table-tab" class="pure-menu-link" v-on:click="tabClick">Default Table</a>
+                </li>
+                <li class="pure-menu-item" v-bind:class="{ 'pure-menu-selected': bordered }">
+                    <a id="bordered-table-tab" class="pure-menu-link" v-on:click="tabClick">Bordered Table</a>
+                </li>
+                <li class="pure-menu-item" v-bind:class="{ 'pure-menu-selected': horizontal }">
+                    <a id="horizontal-table-tab" class="pure-menu-link" v-on:click="tabClick">Horizontal Bordered Tabled</a>
+                </li>
+                <li class="pure-menu-item" v-bind:class="{ 'pure-menu-selected': striped }">
+                    <a id="striped-table-tab" class="pure-menu-link" v-on:click="tabClick">Striped Table</a>
+                </li>
             </ul>
         </div>
         <div>
-            <table class="pure-table">
+            <table class="pure-table" v-bind:class="{ 'pure-table-bordered': bordered, 'pure-table-horizontal': horizontal, 'pure-table-striped': striped }">
                 <thead>
                     <tr>
                         <th>Header 1</th>
@@ -205,12 +225,16 @@
         <hr>
         <div id="menu-select" class="pure-menu pure-menu-horizontal">
             <ul class="pure-menu-list">
-                <li class="pure-menu-item pure-menu-selected"><a id="vertical-menu-tab" class="pure-menu-link">Vertical Menu</a></li>
-                <li class="pure-menu-item"><a id="horizontal-menu-tab" class="pure-menu-link">Horizontal Menu</a></li>
+                <li class="pure-menu-item" v-bind:class="{ 'pure-menu-selected': ! horizontal }">
+                    <a id="vertical-menu-tab" class="pure-menu-link" v-on:click="tabClick">Vertical Menu</a>
+                </li>
+                <li class="pure-menu-item" v-bind:class="{ 'pure-menu-selected': horizontal }">
+                    <a id="horizontal-menu-tab" class="pure-menu-link" v-on:click="tabClick">Horizontal Menu</a>
+                </li>
             </ul>
         </div>
 
-        <div class="pure-menu" id="menu">
+        <div class="pure-menu" id="menu" v-bind:class="{ 'pure-menu-horizontal': horizontal }">
             <ul class="pure-menu-list">
                 <li class="pure-menu-heading">Heading 1</li>
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">Item 1</a></li>
@@ -238,6 +262,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
     <script src="js/techtalk.js"></script>
 </body>
 </html>
