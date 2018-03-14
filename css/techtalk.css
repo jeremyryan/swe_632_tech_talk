@@ -95,3 +95,7 @@ body {
 .pure-g {
     margin-bottom: 5px;
 }
+
+[v-cloak] {
+    display: none;
+}
